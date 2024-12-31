@@ -1,0 +1,167 @@
+/* General Styling */
+:root {
+  --smaller: .75;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background-image: linear-gradient(to bottom right, #A6192E, #F2A900);
+  background-attachment: fixed;
+  color: #fff;
+  text-align: center;
+  padding-top: 0px; /* Add space to avoid text being covered by fixed positioning */
+}
+
+/* Countdown Section */
+#countdown ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#countdown li {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+li span {
+  display: block;
+  font-family: monospace;
+  font-size: 4.5rem;
+}
+
+li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+#countdown {
+  position: absolute;
+  top: 20%;
+  left: 50%; 
+  transform: translateX(-50%);
+  z-index: 10; /* Keeps countdown above other elements */
+}
+
+#content1 {
+  font-size: 3rem;
+  padding: 20px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+/* Styling for Crest Image */
+.crest-img {
+  width: 250px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Card Section */
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 45px;
+  padding: 50px 20px 20px;
+  margin-top: 50vh; /* Pushes the cards further down and out of sight initially */
+}
+
+.container .box {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: #111;
+  color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .box:hover {
+  transform: translateY(-10px);
+}
+
+.container .box h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.container .box p {
+  font-size: 1rem;
+  line-height: 1.4em;
+  margin-bottom: 15px;
+}
+
+.container .box a {
+  color: #fff;
+  background-color: #ff7e5f;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.container .box a:hover {
+  background-color: #feb47b;
+}
+
+/* Glow effect for the boxes */
+.container .box::before,
+.container .box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ffbc00, #ff0058);
+  filter: blur(20px);
+  z-index: 1;
+}
+
+.container .box:nth-child(2)::before,
+.container .box:nth-child(2)::after {
+  background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+.container .box:nth-child(3)::before,
+.container .box:nth-child(3)::after {
+  background: linear-gradient(45deg, #4dff03, #00d0ff);
+}
+
+.container .box span {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.container .box .content {
+  position: relative;
+  z-index: 5;
+  padding: 20px 40px;
+}
